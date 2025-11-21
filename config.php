@@ -44,7 +44,7 @@ if (!empty($_POST)) {
     $sql->execute([$name, $ville, $prix, $image, $host]);
 
     // Redirection pour éviter renvoi du formulaire
-    header("Location: config.php?ajout=ok&tri=$tri&page=$page");
+    header("Location: index.php?ajout=ok&tri=$tri&page=$page");
     exit();
 }
 
@@ -250,8 +250,8 @@ $listings = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <hr>
 
-<!--  SECTION : AJOUTER UN RESULTAT-->
-<h2>Ajouter une logement </h2>
+<!--  SECTION : AJOUTER UNE ANNONCE-->
+<h2>Ajouter une annonce </h2>
 
 <form method="POST">
 
@@ -263,17 +263,19 @@ $listings = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <label for="prix">Prix par nuit (€) :</label>
     <input type="number" name="prix" id="prix" placeholder="Ex: 80" required>
+
     <label for="image">URL de l'image :</label>
     <input type="text" name="image" id="image" placeholder="https://exemple.com/image.jpg" required>
-
+ 
     <label for="host">Nom du propriétaire :</label>
     <input type="text" name="host" id="host" placeholder="Ex: Alice" required>
+ 
+ 
 
-
-    <button type="submit">Ajouter un logement</button>
+    <button type="submit">Ajouter une annonce</button>
 </form>
 
-
+<hr>
 
 
 
